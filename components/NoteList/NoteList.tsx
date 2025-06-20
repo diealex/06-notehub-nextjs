@@ -32,6 +32,7 @@ export default function NoteList({ notes }: NoteListProps) {
             <p className={css.content}>{content}</p>
             <div className={css.footer}>
               <span className={css.tag}>{tag}</span>
+              <a onClick={() => onclickHandle(id!)}>show more..</a>
               <button className={css.button} onClick={() => onclickHandle(id!)}>
                 Delete
               </button>

@@ -54,6 +54,16 @@
   background-color: #bb2d3b;
 }
 
+.listItem a {
+  color: #226ec5;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.listItem a:hover {
+  color: #226ec585;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
