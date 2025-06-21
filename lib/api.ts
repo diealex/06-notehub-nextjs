@@ -3,7 +3,7 @@ import type { Note, AddNote } from "../types/note";
 const ACCESS_TOKEN = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
 axios.defaults.baseURL = "https://notehub-public.goit.study/api";
 
-interface NotesHttpResponse {
+export interface NotesHttpResponse {
   notes: Note[];
   totalPages: number;
 }

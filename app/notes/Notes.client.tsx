@@ -3,7 +3,7 @@ import css from "./Notes.module.css";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
-import { fetchNotes } from "../../lib/api";
+import { fetchNotes, NotesHttpResponse } from "../../lib/api";
 import NoteList from "../../components/NoteList/NoteList";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import Pagination from "../../components/Pagination/Pagination";
@@ -11,7 +11,11 @@ import NoteModal from "../../components/NoteModal/NoteModal";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import Loader from "../../components/Loader/Loader";
 
-export default function Notes() {
+interface NotesClientProps {
+  initialData?: NotesHttpResponse;
+}
+
+export default function Notes({ initialData }: NotesClientProps) {
   const [page, setPage] = useState(1);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -36,6 +40,7 @@ export default function Notes() {
     queryFn: () => fetchNotes(page, debouncedSearchQuery),
     placeholderData: keepPreviousData,
     refetchOnMount: false,
+    initialData,
   });
 
   const notes = data?.notes;
