@@ -2,7 +2,6 @@ import css from "./NoteForm.module.css";
 import { useId } from "react";
 import { Formik, Form, Field, FormikHelpers, ErrorMessage } from "formik";
 import GlobalErrorMessage from "../ErrorMessage/ErrorMessage";
-import { useEffect } from "react";
 import * as Yup from "yup";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { createNote } from "../../lib/api";
@@ -63,22 +62,6 @@ export default function NoteForm({ onClose }: NoteFormProps) {
       tag: values.tag,
     });
   };
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        onClose();
-      }
-    };
-
-    document.addEventListener("keydown", handleKeyDown);
-    document.body.style.overflow = "hidden";
-
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "";
-    };
-  }, [onClose]);
 
   return (
     <>

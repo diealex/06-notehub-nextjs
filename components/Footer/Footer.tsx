@@ -1,6 +1,6 @@
 import css from "./Footer.module.css";
 
-export default function Notes() {
+export default function Footer() {
   return (
     <footer className={css.footer}>
       <div className={css.content}>
@@ -9,7 +9,7 @@ export default function Notes() {
           <p>Developer: Alex</p>
           <p>
             Contact us:
-            <a href="<mailto:student@notehub.app>">student@notehub.app</a>
+            <a href="mailto:student@notehub.app">student@notehub.app</a>
           </p>
         </div>
       </div>
