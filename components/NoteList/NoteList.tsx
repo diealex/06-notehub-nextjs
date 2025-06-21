@@ -4,6 +4,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteNote } from "../../lib/api";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import Loader from "../Loader/Loader";
+import Link from "next/link";
 
 interface NoteListProps {
   notes: Note[];
@@ -32,7 +33,7 @@ export default function NoteList({ notes }: NoteListProps) {
             <p className={css.content}>{content}</p>
             <div className={css.footer}>
               <span className={css.tag}>{tag}</span>
-              <a onClick={() => onclickHandle(id!)}>show more..</a>
+              <Link href={`/notes/${id}`}>show more..</Link>
               <button className={css.button} onClick={() => onclickHandle(id!)}>
                 Delete
               </button>

@@ -6,7 +6,7 @@ import {
 import NotesClient from "./Notes.client";
 import { fetchNotes } from "../../lib/api";
 
-const NoteDetails = async () => {
+const NotesPage = async () => {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
@@ -21,4 +21,4 @@ const NoteDetails = async () => {
   );
 };
 
-export default NoteDetails;
+export default NotesPage;

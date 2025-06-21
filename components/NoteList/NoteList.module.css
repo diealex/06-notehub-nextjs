@@ -55,13 +55,15 @@
 }
 
 .listItem a {
-  color: #226ec5;
-  font-weight: 600;
+  color: #b6d4fe;
+  font-weight: 400;
+  font-size: 12px;
   text-decoration: none;
+  align-self: self-end;
 }
 
 .listItem a:hover {
-  color: #226ec585;
+  color: #e7f1ff;
 }
 
 .footer {
