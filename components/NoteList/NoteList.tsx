@@ -4,7 +4,6 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteNote } from "../../lib/api";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import Loader from "../Loader/Loader";
-import Link from "next/link";
 import { RiDeleteBin7Fill } from "react-icons/ri";
 
 interface NoteListProps {
