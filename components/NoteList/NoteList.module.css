@@ -27,15 +27,29 @@
 }
 
 .content {
+  overflow: hidden;
+  position: relative;
   margin: 0;
+  line-height: normal;
   flex-grow: 1;
   font-size: 14px;
   color: #495057;
-  margin-bottom: 12px;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  /* -webkit-line-clamp: 3; */
   -webkit-box-orient: vertical;
+}
+
+.contentWrap {
+  position: relative;
+  max-height: 3lh;
   overflow: hidden;
+}
+
+.linkWrap {
+  background: linear-gradient(to right, transparent, #fff 80%);
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-end: 0;
 }
 
 .button {
@@ -54,16 +68,14 @@
   background-color: #bb2d3b;
 }
 
-.listItem a {
-  color: #b6d4fe;
-  font-weight: 400;
-  font-size: 12px;
+.contentWrap a {
+  color: #212529;
+  font-weight: 500;
   text-decoration: none;
-  align-self: self-end;
 }
 
-.listItem a:hover {
-  color: #e7f1ff;
+.contentWrap a:hover {
+  color: #b6d4fe;
 }
 
 .footer {
@@ -85,4 +97,5 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  align-self: self-end;
 }

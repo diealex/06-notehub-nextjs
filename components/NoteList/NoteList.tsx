@@ -5,6 +5,7 @@ import { deleteNote } from "../../lib/api";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import Loader from "../Loader/Loader";
 import Link from "next/link";
+import { RiDeleteBin7Fill } from "react-icons/ri";
 
 interface NoteListProps {
   notes: Note[];
@@ -30,12 +31,17 @@ export default function NoteList({ notes }: NoteListProps) {
         {notes.map(({ id, title, content, tag }: Note) => (
           <li className={css.listItem} key={id}>
             <h2 className={css.title}>{title}</h2>
-            <p className={css.content}>{content}</p>
+            <div className={css.contentWrap}>
+              <p className={css.content}>{content}</p>
+              <div className={css.linkWrap}>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href={`/notes/${id}`}>...show more</a>
+              </div>
+            </div>
             <div className={css.footer}>
               <span className={css.tag}>{tag}</span>
-              <Link href={`/notes/${id}`}>show more..</Link>
               <button className={css.button} onClick={() => onclickHandle(id!)}>
-                Delete
+                <RiDeleteBin7Fill />
               </button>
             </div>
           </li>

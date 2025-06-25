@@ -24,7 +24,7 @@ export const fetchNotes = async (
   const results = await axios.get<NotesHttpResponse>(`/notes`, {
     params: {
       page,
-      perPage: 20,
+      perPage: 12,
       search: mysearchtext ? mysearchtext : null,
     },
     headers: {
